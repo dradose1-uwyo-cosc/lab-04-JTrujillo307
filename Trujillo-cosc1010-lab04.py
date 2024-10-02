@@ -5,6 +5,7 @@
 # Lab Section: 15
 # Sources, people worked with, help given to: 
 # Kaleb Moler
+#Jhett Carr
 
 
 
@@ -97,16 +98,17 @@ min_temps = [
 # Write a single for loop to calculate both the average maximum temperature and the average minimum temperature.
 # You cannot use any pre-existing functions (like mean()) and must perform the calculations manually.
 # Output the results of both calculations.
-def Average(max_temps):
-    return sum(max_temps) / len(max_temps)
-avg = Average(max_temps)
-print("The average max temp in laramie was", round(avg, 2),"Degrees")
-def Average(min_temps):
-    return sum(min_temps) / len(min_temps)
-avrg = Average(min_temps)
-print("The Average lowest temp was" , round(avrg, 2),"Degrees")
+max_avg=max_temps[0]
+min_avg=min_temps[0]
+i=1
+while(i<len(min_temps)):
+    max_avg+=max_temps[i]
+    min_avg+=min_temps[i]
+    i=i+1
+max_avg= int(max_avg/len(max_temps))
+min_avg= int(min_avg/len(min_temps))
+print(f"The max average is {max_avg} Degrees and the min average is {min_avg}")
 # For the next part, determine the highest and lowest recorded temperatures.
 # HINT: You can find this information without using any logic or looping.
-print("The lowest temp in max_temps was" ,min(max_temps), "Degrees and the highest is" , max(max_temps) , "Degrees")
-print("the lowest temp in min_temps was" ,min(min_temps), "Degrees and the highest is", max(min_temps) , "Degrees")
-
+print(f"The lowest temp in max_temps was {min(max_temps)} Degrees and the highest is {max(max_temps)} Degrees")
+print(f"The lowest temp in min_temps was {min(min_temps)} Degrees and the highest is {max(min_temps)} Degrees")
